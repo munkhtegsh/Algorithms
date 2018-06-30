@@ -11,7 +11,13 @@ function reverse(str) {
     // output: reversed str
     // assumpt: use reverse method
 
-    return str.split('').reverse().join('');
+    // return str.split('').reverse().join('');
+    let reversed = '';
+    for (let i in str) {
+        reversed = i + reversed 
+    }
+    return reversed;
+    
 }
 
 module.exports = reverse;
