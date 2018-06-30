@@ -7,6 +7,29 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// Solution 1
+// function palindrome(str) {
+//     // input: str
+//     // output: boolean
+//     // assamt: should be same when you read it from both side
+
+//     let reversed = str.split('').reverse().join('');
+//     return reversed === str;
+// }
+
+// Solution 2
+// function palindrome(str) {
+//     let reversed = str.split('').reduce((reversed, char) => char + reversed, '');
+//     return reversed === str;
+// }
+
+// Solution 3 - not a best solution because calculating more than first half of the arr
+function palindrome(str) {
+    return str.split('').every((char, i, arr) => {
+        if (char === arr[arr.length - 1 - i]) {
+        return true
+        }
+    })
+}
 
 module.exports = palindrome;
