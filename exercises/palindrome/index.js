@@ -27,7 +27,7 @@
 function palindrome(str) {
     return str.split('').every((char, i, arr) => {
         if (char === arr[arr.length - 1 - i]) {
-        return true
+        return true;
         }
     })
 }
