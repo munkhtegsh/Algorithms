@@ -8,6 +8,7 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+// Solution 1
 function chunk(array, size) {
     // assumpt: get the last element of newArr
       // if a last element size eq to size or last element is falsy then add [it] to newArr
