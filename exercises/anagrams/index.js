@@ -10,37 +10,10 @@
 
 // Solution 1
 function anagrams(stringA, stringB) {
-    // str, str
-    // boolean
-    // assumpt: count letters in each word and compare
-
-    let word1 = stringA.split('');
-    let word2 = stringB.split('');
-    let countFirst = word1.reduce((acc, curr) => {
-        if (acc[curr]) {
-            acc[curr] += 1
-        } else {
-            acc[curr] = 1;
-        }
-        return acc
-    }, {});
-
-    let countSecond = word2.reduce((acc, curr) => {
-      if (acc[curr]) {
-        acc[curr] += 1;
-      } else {
-        acc[curr] = 1
-      }
-      return acc;
-    }, {})
-
-    for (let el in countFirst) {
-      if (countFirst[el] !== countSecond[el]) {
-        return false
-      }
-    }
-    return true;
-}
+    let wordA = stringA.toLowerCase().split('').sort();
+    let wordB = stringB.toLowerCase().split('').sort();
+    return wordA.join('') === wordB.join('')
+  }
 
 
 
