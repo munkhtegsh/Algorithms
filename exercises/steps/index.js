@@ -17,6 +17,39 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// Solution 1
+// function steps(num) {
+//     for (var row = 0; row < num; row++) {
+//       let str = '';
+//       for (var column = 0; column < num; column++) {
+//         if (row >= column) {
+//           str += '#'
+//         } else {
+//           str += ' '
+//         }
+//       }      
+//       console.log(str)
+//     }
+//   }
+
+// Recusrive solution
+function steps(num, row = 0, str = '') {
+    if (num === row) {
+      return;
+    }
+  
+    if (str.length === num) {
+      console.log(str);
+      return steps(num, row + 1);
+    }
+  
+    if (str.length <= row) {
+      str += '#';
+    } else {
+      str += ' ';
+    }
+  
+    steps(num, row, str);
+  }
 
 module.exports = steps;
