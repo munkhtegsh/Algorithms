@@ -19,7 +19,7 @@
 //     return count;
 // }
 
-// Solution 2 with regexp
+// Solution 2 with regex
 function vowels(str) {
     let matched = str.match(/[aeiou]/gi);
     return matched ? matched.length : 0;
