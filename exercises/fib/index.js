@@ -8,21 +8,28 @@
 // Example:
 //   fib(4) === 3
 
+// function fib(n) {
+//     // create arr
+//     // loop n
+//       // need to add the first and next
+//       // push it to arr
+
+//   let sum = 0; 
+//   let container = [0, 1];
+//   for (let i = 2; i <= n; i++) {
+//     const a = container[i - 1];
+//     const b = container[i - 2];
+//     container.push(a + b)
+//   }
+//   return container[n];
+// }
+
+
 function fib(n) {
-    // create arr
-    // loop n
-      // need to add the first and next
-      // push it to arr
-
-  let sum = 0; 
-  let container = [0, 1];
-  for (let i = 2; i <= n; i++) {
-    const a = container[i - 1];
-    const b = container[i - 2];
-    container.push(a + b)
+    if (n < 2){
+      return n
+    }
+    return fib(n - 1) + fib (n - 2)
   }
-  return container[n];
-}
-
 
 module.exports = fib;
