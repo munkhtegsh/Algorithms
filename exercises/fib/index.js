@@ -8,6 +8,7 @@
 // Example:
 //   fib(4) === 3
 
+// Iterative solution: 
 // function fib(n) {
 //     // create arr
 //     // loop n
@@ -24,12 +25,39 @@
 //   return container[n];
 // }
 
+// Recursive solution:
+// function fib(n) {
+//     if (n < 2){
+//       return n
+//     }
+//     return fib(n - 1) + fib(n - 2)
+//   }
 
-function fib(n) {
-    if (n < 2){
-      return n
+
+// Using memoize: 
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+      if (cache[args]) {
+        return cache[args];
+      }
+  
+      const result = fn.apply(this, args);
+      cache[args] = result;
+      return result;
     }
-    return fib(n - 1) + fib (n - 2)
   }
+  
+  function slowFib(n) {
+    if (n < 2) {
+      return n;
+    }
+    return fib(n - 1) + fib(n - 2)
+  }
+  
+  fib = memoize(slowFib)
+  fib(50)
+
+
 
 module.exports = fib;
