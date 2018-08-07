@@ -20,6 +20,15 @@ class Queue {
   peek() {
     return this.data[this.data.length - 1]
   }
+
+  weave() {
+    let arr = [];
+    for (let i = 0; i < this.data.length; i+=2) {
+      arr.push(arr[i], arr[i + 1])
+    }
+
+    return arr;
+  }
 }
 
 module.exports = Queue;
