@@ -20,15 +20,25 @@ class Queue {
   peek() {
     return this.data[this.data.length - 1]
   }
+  
+  weave(q1, q2) {
+    const q = new Queue();
+    while (q1.peek() || q2.peek()) {
+      if (q1.peek()) {
+        q.add(q1.remove());
+      }
 
-  weave() {
-    let arr = [];
-    for (let i = 0; i < this.data.length; i+=2) {
-      arr.push(arr[i], arr[i + 1])
+      if (q2.peek()) {
+        q.add(q2.remove());
+      }
+
     }
 
-    return arr;
+    return q;
   }
+
 }
+
+
 
 module.exports = Queue;
