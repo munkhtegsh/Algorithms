@@ -24,12 +24,30 @@
 // }
 
 // Solution 3 - not a best solution because calculating more than first half of the arr
+// function palindrome(str) {
+//     return str.split('').every((char, i, arr) => {
+//         if (char === arr[arr.length - 1 - i]) {
+//         return true;
+//         }
+//     })
+// }
+
+// Solution 4 - Recursive
 function palindrome(str) {
-    return str.split('').every((char, i, arr) => {
-        if (char === arr[arr.length - 1 - i]) {
-        return true;
-        }
-    })
+  // 1. When str is empty or has only one char return true
+  // 2. If first and last char are different return false
+  // 3. Remove first and last char and call function
+
+  if (str.length === 0 || str.length === 1) {
+    return true;
+  } else {
+    if (str[0] !== str[str.length - 1]) {
+      return false;
+    } else {
+      let subString = str.slice(1, str.length - 1);
+      return palindrome(subString);
+    }
+  }
 }
 
 module.exports = palindrome;
